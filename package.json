@@ -11,6 +11,7 @@
     "react": "16.6.1",
     "react-native": "0.57.5",
     "react-navigation": "^3.0.0",
+    "react-navigation-fluid-transitions": "^0.2.73",
     "redux": "^4.0.1",
     "redux-saga": "^0.16.2"
   },
