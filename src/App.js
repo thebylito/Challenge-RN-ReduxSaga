@@ -4,6 +4,8 @@ import Routes from './navigation';
 import reduxStore from './store/';
 import NavigationService from './navigation/NavigationService';
 
+const { store } = reduxStore();
+
 const App = () => (
   <Provider store={store}>
     <Routes
