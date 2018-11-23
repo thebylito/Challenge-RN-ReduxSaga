@@ -1,9 +1,9 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { FluidNavigator } from 'react-navigation-fluid-transitions';
 
 // Pages
 import HomeScreen from '../screens/HomeScreen';
-import ListScreen from '../screens/ComprasScreen';
+import ListScreen from '../screens/ListScreen';
 import DetailsScreen from '../screens/DetailsScreen';
 
 const AppRoutes = createStackNavigator({
@@ -12,4 +12,4 @@ const AppRoutes = createStackNavigator({
   detailsScreen: { screen: DetailsScreen },
 });
 
-export default AppRoutes;
+export default createAppContainer(AppRoutes);
