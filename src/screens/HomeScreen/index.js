@@ -1,13 +1,20 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from './styles';
-import Colors from '../../utils/colors';
-import GlobalStyle from '../../utils/style';
-import Book from '../../components/Books';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as FeaturedBooksCreators } from '../../store/ducks/featuredBooks';
 import FeaturedBooks from '../../components/FeaturedBooks';
+import Colors from '../../utils/colors';
+import styles from './styles';
 
 class HomeScreen extends React.Component {
-  state = { screenName: 'Home' };
+  componentDidMount() {
+    this.getInitialData();
+  }
+
+  getInitialData = () => {
+    this.props.getFeaturedBooksRequest();
+  };
 
   render() {
     return (
@@ -25,4 +32,10 @@ HomeScreen.navigationOptions = {
   },
 };
 
-export default HomeScreen;
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(FeaturedBooksCreators, dispatch);
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(HomeScreen);
