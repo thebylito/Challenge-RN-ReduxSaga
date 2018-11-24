@@ -25,7 +25,7 @@ const pageStyle = {
 };
 
 // Then we set our styles with the help of the em() function
-const Style = {
+const GlobalStyle = {
   // GENERAL
   DEVICE_WIDTH: x,
   DEVICE_HEIGHT: y,
@@ -48,4 +48,4 @@ const Style = {
   PAGE_STYLE: pageStyle,
 };
 
-export default Style;
+export default GlobalStyle;
